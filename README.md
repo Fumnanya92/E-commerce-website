@@ -149,7 +149,9 @@ To develop a Jenkins Pipeline for running the e-commerce web application.
    ![image](https://github.com/user-attachments/assets/c0debe04-7fd0-4f08-bf6d-aa8d4c0fc98d)
 
 3. **Pipeline Definition**: Choose **Pipeline script from SCM** and provide the GitHub repository URL.
-4. **Pipeline Script Example**:
+   ![image](https://github.com/user-attachments/assets/1c64422a-bec6-47ea-b3a4-ece5cc3f159e)
+
+5. **Pipeline Script Example**:
 
 ```groovy
 pipeline {
