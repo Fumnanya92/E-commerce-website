@@ -2,7 +2,7 @@
 
 ### Project Scenario
 
-A technology consulting firm is migrating to cloud architecture. Your task as a DevOps Engineer is to design and implement a CI/CD pipeline using **Jenkins** to automate the deployment of an e-commerce web application. This pipeline will handle **continuous integration (CI)** and **continuous deployment (CD)**, ensuring scalability and reliability.
+A technology consulting firm is migrating to cloud architecture. My task as a DevOps Engineer is to design and implement a CI/CD pipeline using **Jenkins** to automate the deployment of an e-commerce web application. This pipeline will handle **continuous integration (CI)** and **continuous deployment (CD)**, ensuring scalability and reliability.
 
 ---
 
@@ -31,7 +31,7 @@ A technology consulting firm is migrating to cloud architecture. Your task as a 
 ### 1. Jenkins Server Setup
 
 #### Objective:
-To configure a Jenkins server for automating the CI/CD pipeline.
+Configure a Jenkins server to automate the CI/CD pipeline.
 
 #### Steps:
 
@@ -39,15 +39,17 @@ To configure a Jenkins server for automating the CI/CD pipeline.
 ```bash
 # For Ubuntu server
 sudo apt update
-sudo apt install openjdk-11-jdk -y
-wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
-sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+sudo apt install default-jdk-headless
+wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > \
+/etc/apt/sources.list.d/jenkins.list'
 sudo apt update
-sudo apt install jenkins -y
+sudo apt-get install jenkins
 
-# Start Jenkins
+# Start Jenkins if need be 
 sudo systemctl start jenkins
 sudo systemctl enable jenkins
+
 ![image](https://github.com/user-attachments/assets/7bdec00c-58e8-4898-8dc9-5b35465cd0ab)
 
 
@@ -60,10 +62,11 @@ http://<your_server_ip>:8080
 - After logging into Jenkins, install the following essential plugins:
   - **Git plugin**: Enables Git integration for pulling code.
   - **Docker plugin**: Allows Jenkins to run Docker containers for builds and deployments.
+  - **Blue Ocean Plugin**: enriches your website building experience by adding extra features to the OceanWP free theme.
 
   ```bash
   # Navigate to "Manage Jenkins" > "Manage Plugins" > "Available Plugins"
-  # Install Git, Docker Pipeline, Pipeline plugins
+  # Install Git, Docker Pipeline, Pipeline plugins, Blue Ocean Plugins
   ```
 
 ![image](https://github.com/user-attachments/assets/cc24cc00-3e14-4ad3-bb62-1d4a37a09a8f)
