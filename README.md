@@ -196,4 +196,8 @@ pipeline {
 
 ---
 
+![image](https://github.com/user-attachments/assets/8c3bb462-0fed-4a2f-948e-4581d29e1aae)
+
+
+
 This documentation outlines the steps needed to automate the deployment of an e-commerce website using Jenkins CI/CD pipeline, ensuring a reliable and scalable environment.
