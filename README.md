@@ -146,49 +146,38 @@ To develop a Jenkins Pipeline for running the e-commerce web application.
 ##### 4.1 Create a Jenkins Pipeline Script to Run the Application
 
 1. Go to **New Item** > **Pipeline**.
-2. **Pipeline Definition**: Choose **Pipeline script from SCM** and provide the GitHub repository URL.
-3. **Pipeline Script Example**:
+   ![image](https://github.com/user-attachments/assets/c0debe04-7fd0-4f08-bf6d-aa8d4c0fc98d)
+
+3. **Pipeline Definition**: Choose **Pipeline script from SCM** and provide the GitHub repository URL.
+4. **Pipeline Script Example**:
 
 ```groovy
 pipeline {
     agent any
-    
+
     stages {
-        stage('Checkout') {
+        stage('Connect To Github') {
             steps {
-                git url: 'https://github.com/your-repository-url.git', branch: 'main'
+                    checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/RidwanAz/jenkins-scm.git']])
             }
         }
-        
-        stage('Build') {
+        stage('Build Docker Image') {
             steps {
-                sh 'mvn clean package'
+                script {
+                    sh 'docker build -t dockerfile .'
+                }
             }
         }
-        
-        stage('Test') {
+        stage('Run Docker Container') {
             steps {
-                sh 'mvn test'
+                script {
+                    sh 'docker run -itd -p 8081:80 dockerfile'
+                }
             }
-        }
-        
-        stage('Deploy') {
-            steps {
-                echo 'Deploying to production...'
-                // Add deployment steps (e.g., using Docker or Kubernetes)
-            }
-        }
-    }
-    
-    post {
-        success {
-            echo 'Build completed successfully!'
-        }
-        failure {
-            echo 'Build failed!'
         }
     }
 }
+
 ```
 - **Checkout Stage**: Pulls the latest code from the repository.
 - **Build Stage**: Builds the application (e.g., using Maven).
