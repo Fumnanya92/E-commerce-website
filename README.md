@@ -48,6 +48,8 @@ sudo apt install jenkins -y
 # Start Jenkins
 sudo systemctl start jenkins
 sudo systemctl enable jenkins
+![image](https://github.com/user-attachments/assets/7bdec00c-58e8-4898-8dc9-5b35465cd0ab)
+
 
 # Access Jenkins via the browser
 http://<your_server_ip>:8080
@@ -64,6 +66,9 @@ http://<your_server_ip>:8080
   # Install Git, Docker Pipeline, Pipeline plugins
   ```
 
+![image](https://github.com/user-attachments/assets/cc24cc00-3e14-4ad3-bb62-1d4a37a09a8f)
+
+
 ##### 1.3 Configure Jenkins with Required Security Measures
 - **User Authentication**: 
   - Go to "Manage Jenkins" > "Configure Global Security".
@@ -75,6 +80,7 @@ http://<your_server_ip>:8080
   - Enable Cross-Site Request Forgery protection from the global security configuration.
 - **SSL Setup**: 
   - For production environments, configure SSL using a reverse proxy (Nginx or Apache) to protect Jenkins traffic.
+![image](https://github.com/user-attachments/assets/4fe1d73f-e5cf-4ec6-a6d2-fe6f76f4e1c8)
 
 ---
 
