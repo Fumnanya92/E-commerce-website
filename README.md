@@ -101,11 +101,14 @@ To integrate Jenkins with a source code management system (e.g., GitHub) for tra
   - Click **Settings** > **Webhooks** > **Add webhook**.
   - Set the **Payload URL** to `http://<jenkins-server-ip>:8080/github-webhook/`.
   - Choose **Just the push event** to trigger builds on every commit.
+  ![image](https://github.com/user-attachments/assets/06974e86-6ac1-47fd-b343-49a36db15dbb)
+
   
 ```bash
 # GitHub webhook URL example
 http://<jenkins-server-ip>:8080/github-webhook/
 ```
+![image](https://github.com/user-attachments/assets/b650d450-c5aa-465f-858a-a719bdae5f8e)
 
 ---
 
