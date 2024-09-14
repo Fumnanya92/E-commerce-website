@@ -119,7 +119,7 @@ COPY index.html /usr/share/nginx/html/
 EXPOSE 80
 
 ```
-##### 1.5 Create your web application in the same directory
+##### 1.5 Create your web application(index.html) in the same directory.
 ---
 
 ### 2. Source Code Management Repository Integration
@@ -213,9 +213,18 @@ pipeline {
      ![image](https://github.com/user-attachments/assets/1c64422a-bec6-47ea-b3a4-ece5cc3f159e)
 
 ---
+**To access your web browser we must ensure that our security group supports our port: `8081`**
+
+![image](https://github.com/user-attachments/assets/5d9cac29-5966-4901-9cf3-cc5b652511e5)
+
+---
+#### We can now access our web application here 
+```
+http://jenkins-ip-address:8081
+```
 
 ![image](https://github.com/user-attachments/assets/b43874fd-3493-450e-82c3-71ac88e9661c)
 
 
 
-This documentation outlines the steps needed to automate the deployment of an e-commerce website using Jenkins CI/CD pipeline, ensuring a reliable and scalable environment.
+This documentation outlines the steps needed to automate the deployment of an e-commerce website using Jenkins CI/CD pipeline.
