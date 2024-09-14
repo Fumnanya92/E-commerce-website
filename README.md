@@ -137,16 +137,11 @@ To create Jenkins Freestyle jobs for building the web application and running un
 
 1. Navigate to **New Item** > **Freestyle Project**.
 2. **Source Code Management**: Select **Git** and enter the repository URL.
-3. **Build Trigger**: Select **GitHub hook trigger for GITScm polling**.
-4. **Build Steps**:
-   - Add **Execute Shell** and configure the build process (e.g., `mvn clean install` for Java-based projects).
-5. **Post-build Actions**:
-   - Add **Publish JUnit test result report** for unit tests.
+3. **Branches to build**: change this to */main
 
-```bash
-# Example build command for Maven-based Java app
-mvn clean install
-```
+4. **Build Trigger**: Select **GitHub hook trigger for GITScm polling**.
+- Save.
+
 
 ---
 
@@ -196,18 +191,9 @@ pipeline {
 
 ```
 - **Checkout Stage**: Pulls the latest code from the repository.
-- **Build Stage**: Builds the application (e.g., using Maven).
-- **Test Stage**: Runs unit tests to ensure code stability.
+- **Build Stage**: Builds the application (dockerfile).
+- **Test Stage**: Runs unit tests to ensure code stability. - this stage is not in the above script 
 - **Deploy Stage**: Executes deployment logic (e.g., Docker container or Kubernetes deployment).
-
----
-
-## Security Measures Summary
-- **User Authentication**: Implemented Jenkins user database or LDAP.
-- **Role-based Access Control**: Users are assigned specific roles and permissions.
-- **CSRF Protection**: Enabled by default in Jenkins settings.
-- **SSL**: Configured via reverse proxy for secure communication.
-
 ---
 
 ![image](https://github.com/user-attachments/assets/b43874fd-3493-450e-82c3-71ac88e9661c)
