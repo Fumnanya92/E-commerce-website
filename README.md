@@ -191,6 +191,11 @@ pipeline {
 - **Build Stage**: Builds the application (dockerfile).
 - **Test Stage**: Runs unit tests to ensure code stability. - this stage is not in the above script 
 - **Deploy Stage**: Executes deployment logic (e.g., Docker container or Kubernetes deployment).
+- **To get a custom syntax to connect Git to jenkins click** `pipeline syntax`
+- **Steps**
+   Select **checkout: Check out from version control**
+    input the git repo URL, credentials, and branch */main
+    **Generate Pipeline script**
 ---
 
 ![image](https://github.com/user-attachments/assets/b43874fd-3493-450e-82c3-71ac88e9661c)
