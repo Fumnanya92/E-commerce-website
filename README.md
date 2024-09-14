@@ -72,8 +72,34 @@ http://<your_server_ip>:8080
 ![image](https://github.com/user-attachments/assets/cc24cc00-3e14-4ad3-bb62-1d4a37a09a8f)
 
 
-##### 1.3 Configure Jenkins with Required Security Measures
-- **User Authentication**: 
+##### 1.3 Installing Docker to the machine
+-  `nano` into `docker.sh` and paste the follwing script
+  
+  ```
+  sudo apt-get update -y
+sudo apt-get install ca-certificates curl gnupg
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update -y
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+sudo systemctl status docker
+```
+- Make the file executable
+  ```
+  chmod +x docker.sh
+  ```
+- Run the file to install docker
+  ```
+  ./docker.sh
+  ```
+  
   - Go to "Manage Jenkins" > "Configure Global Security".
   - Set up **Jenkins own user database** or integrate with LDAP/AD if applicable.
 - **Role-based Access Control**:
