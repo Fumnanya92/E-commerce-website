@@ -49,10 +49,10 @@ sudo apt-get install jenkins
 # Start Jenkins if need be 
 sudo systemctl start jenkins
 sudo systemctl enable jenkins
-
+```
 ![image](https://github.com/user-attachments/assets/7bdec00c-58e8-4898-8dc9-5b35465cd0ab)
 
-
+```
 # Access Jenkins via the browser
 http://<your_server_ip>:8080
 ```
