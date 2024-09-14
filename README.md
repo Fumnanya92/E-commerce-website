@@ -101,6 +101,25 @@ sudo systemctl status docker
   ```
   ![image](https://github.com/user-attachments/assets/cc24cc00-3e14-4ad3-bb62-1d4a37a09a8f)
 
+##### 1.4 Creating a dockerfile 
+ **Steps**
+ 1. Create a new file `dockerfile`
+ 2. Copy the bellow script into the file and save
+```
+# Use the official NGINX base image
+FROM nginx:latest
+
+# Set the working directory in the container
+WORKDIR  /usr/share/nginx/html/
+
+# Copy the local HTML file to the NGINX default public directory
+COPY index.html /usr/share/nginx/html/
+
+# Expose port 80 to allow external access
+EXPOSE 80
+
+```
+##### 1.5 Create your web application in the same directory
 ---
 
 ### 2. Source Code Management Repository Integration
@@ -116,10 +135,6 @@ sudo systemctl status docker
   - set the **Content type** to application/json
   - Choose **Just the push event** to trigger builds on every commit. Save
   ![image](https://github.com/user-attachments/assets/06974e86-6ac1-47fd-b343-49a36db15dbb)
-
-  
-
-
 ---
 
 ### 3. Jenkins Freestyle Jobs for Build and Unit Tests
@@ -155,7 +170,6 @@ To develop a Jenkins Pipeline for running the e-commerce web application.
    ![image](https://github.com/user-attachments/assets/c0debe04-7fd0-4f08-bf6d-aa8d4c0fc98d)
 
 3. **Pipeline Definition**: Choose **Pipeline script from SCM** and provide the GitHub repository URL.
-   ![image](https://github.com/user-attachments/assets/1c64422a-bec6-47ea-b3a4-ece5cc3f159e)
 
 5. **Pipeline Script Example**:
 
@@ -196,6 +210,8 @@ pipeline {
    Select **checkout: Check out from version control**
     input the git repo URL, credentials, and branch */main
     **Generate Pipeline script**
+     ![image](https://github.com/user-attachments/assets/1c64422a-bec6-47ea-b3a4-ece5cc3f159e)
+
 ---
 
 ![image](https://github.com/user-attachments/assets/b43874fd-3493-450e-82c3-71ac88e9661c)
