@@ -68,8 +68,8 @@ http://<your_server_ip>:8080
   # Navigate to "Manage Jenkins" > "Manage Plugins" > "Available Plugins"
   # Install Git, Docker Pipeline, Pipeline plugins, Blue Ocean Plugins
   ```
+![image](https://github.com/user-attachments/assets/4fe1d73f-e5cf-4ec6-a6d2-fe6f76f4e1c8)
 
-![image](https://github.com/user-attachments/assets/cc24cc00-3e14-4ad3-bb62-1d4a37a09a8f)
 
 
 ##### 1.3 Installing Docker to the machine
@@ -99,27 +99,11 @@ sudo systemctl status docker
   ```
   ./docker.sh
   ```
-  
-  - Go to "Manage Jenkins" > "Configure Global Security".
-  - Set up **Jenkins own user database** or integrate with LDAP/AD if applicable.
-- **Role-based Access Control**:
-  - Install the **Role-based Authorization Strategy** plugin.
-  - Create roles for admins, developers, and others with specific access rights.
-- **CSRF Protection**:
-  - Enable Cross-Site Request Forgery protection from the global security configuration.
-- **SSL Setup**: 
-  - For production environments, configure SSL using a reverse proxy (Nginx or Apache) to protect Jenkins traffic.
-![image](https://github.com/user-attachments/assets/4fe1d73f-e5cf-4ec6-a6d2-fe6f76f4e1c8)
+  ![image](https://github.com/user-attachments/assets/cc24cc00-3e14-4ad3-bb62-1d4a37a09a8f)
 
 ---
 
 ### 2. Source Code Management Repository Integration
-
-#### Objective:
-To integrate Jenkins with a source code management system (e.g., GitHub) for tracking changes in the project.
-
-#### Steps:
-
 ##### 2.1 Integrate Jenkins with GitHub
 - Go to **Manage Jenkins** > **Configure System**.
 - Scroll down to **GitHub** section and add your **GitHub credentials** (username, password, or access token).
@@ -129,7 +113,8 @@ To integrate Jenkins with a source code management system (e.g., GitHub) for tra
   - Go to the GitHub repository.
   - Click **Settings** > **Webhooks** > **Add webhook**.
   - Set the **Payload URL** to `http://<jenkins-server-ip>:8080/github-webhook/`.
-  - Choose **Just the push event** to trigger builds on every commit.
+  - set the **Content type** to application/json
+  - Choose **Just the push event** to trigger builds on every commit. Save
   ![image](https://github.com/user-attachments/assets/06974e86-6ac1-47fd-b343-49a36db15dbb)
 
   
