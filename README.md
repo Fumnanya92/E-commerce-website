@@ -118,11 +118,7 @@ sudo systemctl status docker
   ![image](https://github.com/user-attachments/assets/06974e86-6ac1-47fd-b343-49a36db15dbb)
 
   
-```bash
-# GitHub webhook URL example
-http://<jenkins-server-ip>:8080/github-webhook/
-```
-![image](https://github.com/user-attachments/assets/b650d450-c5aa-465f-858a-a719bdae5f8e)
+
 
 ---
 
@@ -141,6 +137,7 @@ To create Jenkins Freestyle jobs for building the web application and running un
 
 4. **Build Trigger**: Select **GitHub hook trigger for GITScm polling**.
 - Save.
+![image](https://github.com/user-attachments/assets/b650d450-c5aa-465f-858a-a719bdae5f8e)
 
 
 ---
